@@ -7,7 +7,11 @@ import { VisibilityControl } from "./Components/VisibilityControl";
 
 function App() {
   /* 1º se define al dueño de las tareas */
-  const [userName, setUserName] = useState("Vivi");
+  const [userName, setUserName] = useState("Jizga");
+  const newUserName = (e) => {
+    setUserName(e.target.value);
+    localStorage.setItem("user", userName)
+  } 
 
   /* 2º se definen las tareas */
   const [taskItems, setTaskItems] = useState([
@@ -25,24 +29,26 @@ function App() {
 
   useEffect(() => {
     let data = localStorage.getItem("task");
-
-    if (data != null) {
+    let user = localStorage.getItem("user")
+    if (data != null && user != null) {
       setTaskItems(JSON.parse(data));
+      setUserName(user)
     } else {
-      setUserName("Vivi Example");
+      setUserName("Pepe");
       setTaskItems([
-        { name: "Task One Example", done: false },
+        /*{ name: "Task One Example", done: false },
         { name: "Task Two Example", done: false },
         { name: "Task Three Example", done: true },
-        { name: "Task Four Example", done: false },
+        { name: "Task Four Example", done: false }, */
       ]);
       setShowCompleted(true);
     }
   }, []);
 
   useEffect(() => {
-    localStorage.setItem("task", JSON.stringify(taskItems));
-  }, [taskItems]);
+    localStorage.setItem("task", JSON.stringify(taskItems))
+    localStorage.setItem("user", userName);
+  }, [taskItems,userName]);
 
   /* 3º.-- Se define la función que añadirá las tareas nuevas */
 
@@ -75,7 +81,7 @@ componente "TaskRow" mediante props */
 
   return (
     <div>
-      <TaskBanner userName={userName} taskItems={taskItems} />
+      <TaskBanner userName={userName} taskItems={taskItems} newUserName={newUserName}/>
       <TaskCreator callback={createNewTask} />
       <table className="table table-striped table-bordered">
         <thead>
