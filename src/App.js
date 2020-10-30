@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { TaskRow } from "./Components/TaskRow"; /* así es como usamos la función hecha en 
 el componente "TaskRow" */
 import { TaskBanner } from "./Components/TaskBanner";
@@ -20,6 +20,29 @@ function App() {
   /* 4º.-- Mostrar las tareas completadas  */
 
   const [showCompleted, setShowCompleted] = useState(true);
+
+  /* Uso del UseEffect nada más iniciar la web */
+
+  useEffect(() => {
+    let data = localStorage.getItem("task");
+
+    if (data != null) {
+      setTaskItems(JSON.parse(data));
+    } else {
+      setUserName("Vivi Example");
+      setTaskItems([
+        { name: "Task One Example", done: false },
+        { name: "Task Two Example", done: false },
+        { name: "Task Three Example", done: true },
+        { name: "Task Four Example", done: false },
+      ]);
+      setShowCompleted(true);
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("task", JSON.stringify(taskItems));
+  }, [taskItems]);
 
   /* 3º.-- Se define la función que añadirá las tareas nuevas */
 
