@@ -3,6 +3,7 @@ import { TaskRow } from "./Components/TaskRow"; /* así es como usamos la funci�
 el componente "TaskRow" */
 import { TaskBanner } from "./Components/TaskBanner";
 import { TaskCreator } from "./Components/TaskCreator";
+import { VisibilityControl } from "./Components/VisibilityControl";
 
 function App() {
   /* 1º se define al dueño de las tareas */
@@ -15,7 +16,13 @@ function App() {
     { name: "Task Three", done: true },
     { name: "Task Four", done: false },
   ]);
+
+  /* 4º.-- Mostrar las tareas completadas  */
+
+  const [showCompleted, setShowCompleted] = useState(true);
+
   /* 3º.-- Se define la función que añadirá las tareas nuevas */
+
   const createNewTask = (taskName) => {
     if (!taskItems.find((t) => t.name === taskName)) {
       setTaskItems([...taskItems, { name: taskName, done: false }]);
@@ -32,13 +39,15 @@ function App() {
   /* 1º.-- Se define la función taskTableRows, cuyos datos se transladarán al 
 componente "TaskRow" mediante props */
 
-  const taskTableRows = () => {
+  const taskTableRows = (doneValue) => {
     /* La función recorrerá cada Item */
     /* cada item retornará un "tr",
     el cual retornará  el nombre (dentro de un "td") */
-    return taskItems.map((task) => (
-      <TaskRow task={task} key={task.name} toggleTask={toggleTask} />
-    ));
+    return taskItems
+      .filter((task) => task.done === doneValue)
+      .map((task) => (
+        <TaskRow task={task} key={task.name} toggleTask={toggleTask} />
+      ));
   };
 
   return (
@@ -52,9 +61,27 @@ componente "TaskRow" mediante props */
             <th>Done</th>
           </tr>
         </thead>
+        {/* función que dará el contenido de la tabla */}
+        <tbody>{taskTableRows(false)}</tbody>
       </table>
-      {/* función que dará el contenido de la tabla */}
-      <tbody>{taskTableRows()}</tbody>
+      <div className="bg-secondary text-white text-center p-2">
+        <VisibilityControl
+          description="Completed Task"
+          isChecked={showCompleted}
+          callback={(checked) => setShowCompleted(checked)}
+        />
+      </div>
+      {showCompleted && (
+        <table className="table table-striped table-bordered">
+          <thead>
+            <tr>
+              <th>Description</th>
+              <th>Done</th>
+            </tr>
+          </thead>
+          <tbody>{taskTableRows(true)}</tbody>
+        </table>
+      )}
     </div>
   );
 }
