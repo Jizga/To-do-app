@@ -15,10 +15,9 @@ function App() {
 
   /* 2º se definen las tareas */
   const [taskItems, setTaskItems] = useState([
-    { name: "Task One", done: false },
-    { name: "Task Two", done: false },
-    { name: "Task Three", done: true },
-    { name: "Task Four", done: false },
+    { name: "Go to the market", done: false },
+    { name: "Buy Gabri's present", done: false },
+    { name: "Finish the proyecto 'To Do'", done: true },
   ]);
 
   /* 4º.-- Mostrar las tareas completadas  */
@@ -34,8 +33,7 @@ function App() {
       setTaskItems(JSON.parse(data));
       setUserName(user);
     } else {
-      setUserName("Pepe");
-      setTaskItems([]);
+      setUserName("Jizga");
       setShowCompleted(true);
     }
   }, []);
