@@ -111,8 +111,8 @@ componente "TaskRow" mediante props */
         <table className="table table-striped table-bordered">
           <thead>
             <tr>
-              <th>Description</th>
-              <th>Done</th>
+              <th className="description">Description</th>
+              <th className="done">Done</th>
             </tr>
           </thead>
           {/* función que dará el contenido de la tabla */}
@@ -133,8 +133,8 @@ componente "TaskRow" mediante props */
           <table className="table table-striped table-bordered">
             <thead>
               <tr>
-                <th>Description</th>
-                <th>Done</th>
+              <th className="description">Description</th>
+              <th className="done">Done</th>
               </tr>
             </thead>
             <tbody>{taskTableRows(true)}</tbody>

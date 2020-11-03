@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import styles from "./TaskCreator.module.scss";
 
 export const TaskCreator = (props) => {
   const [newTaskName, setNewTaskName] = useState(" ");
@@ -14,12 +15,12 @@ export const TaskCreator = (props) => {
     <div className="my-1">
       <input
         type="text"
-        className="form-control"
+        className={styles.newTask}
         value={newTaskName}
         onChange={updateNewTaskValue}
       />
       {/* botón para agregar una nueva tarea */}
-      <button className="btn btn-primary mt-1" onClick={createNewTask}>
+      <button className={styles.bottonNewTask} onClick={createNewTask}>
         Add
       </button>
     </div>
