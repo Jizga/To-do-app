@@ -9,7 +9,7 @@ h4 {
 
   .userName {
    background-color: rgb(60, 57, 73);
-    border-style: none;
+   border: 0;
     cursor: pointer;
     grid-column: 1/2;
     width: auto;
@@ -19,6 +19,12 @@ h4 {
     color: whitesmoke;
     font-family: 'Fredericka the Great', cursive;
     margin-left: 12.5rem;
+    &:hover {
+      color: red;
+    }
+    &:focus {
+      outline: none;
+    }
   }
 
   .list {

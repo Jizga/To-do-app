@@ -116,7 +116,7 @@ componente "TaskRow" mediante props */
             </tr>
           </thead>
           {/* función que dará el contenido de la tabla */}
-          <tbody>{taskTableRows(false)}</tbody>
+          <tbody className="task">{taskTableRows(false)}</tbody>
         </table>
 
         <TaskCreator callback={createNewTask} />
@@ -137,7 +137,7 @@ componente "TaskRow" mediante props */
               <th className="done">Done</th>
               </tr>
             </thead>
-            <tbody>{taskTableRows(true)}</tbody>
+            <tbody className="task">{taskTableRows(true)}</tbody>
           </table>
         )}
       </div>
