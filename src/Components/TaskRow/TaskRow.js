@@ -1,5 +1,5 @@
 import React from "react";
-// import { TaskDelete } from "./TaskDelete";
+import styles from "./TaskRow.module.scss";
 
 /* Este componente, lo único que hará es generar filas, es decir, devoverá los elementos "tr" de "App.js" */
 /* ESte componente recibe los datos de "App", y le devuelve al mismo los datos */
@@ -18,7 +18,7 @@ export const TaskRow = (props) => {
           onChange={() => props.toggleTask(props.task)}
         />
         {/* Botón de borrar tarea */}
-        <button onClick={() => props.deleteTask(props.task.name)}>
+        <button onClick={() => props.deleteTask(props.task.name)} className={styles.deleteBotton}>
           Delete
         </button>
       </td>
