@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap');
+
+
+h4 {
+  padding: 1.5rem;
+  background-color: rgb(60, 57, 73);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  .userName {
+   background-color: rgb(60, 57, 73);
+    border-style: none;
+    cursor: pointer;
+    grid-column: 1/2;
+    width: auto;
+    justify-self: end;
+    text-align: end;
+    padding-bottom: 1rem;
+    color: whitesmoke;
+    font-family: 'Fredericka the Great', cursive;
+    margin-left: 12.5rem;
+  }
+
+  .list {
+   background-color: rgb(60, 57, 73);
+   color: whitesmoke;
+   text-align: start;
+   font-family: 'Fredericka the Great', cursive;
+   grid-column: 2/4;
+   margin-left: 0;
+   
+  }
+
+  .nTask {
+    background-color: rgb(60, 57, 73);
+    grid-column: 4;
+    justify-self: center;
+    color: rgba(194, 192, 192, 0.397);
+    font-size: medium;
+    margin-right: 1rem;
+  }
+}

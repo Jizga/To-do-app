@@ -18,7 +18,7 @@ export const TaskCreator = (props) => {
         value={newTaskName}
         onChange={updateNewTaskValue}
       />
-      {/* botón para agregar una nueva tarea para hacer */}
+      {/* botón para agregar una nueva tarea */}
       <button className="btn btn-primary mt-1" onClick={createNewTask}>
         Add
       </button>
