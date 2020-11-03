@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 export const TaskBanner = (props) => {
   
@@ -10,7 +10,7 @@ export const TaskBanner = (props) => {
         type="text"
         value={props.userName}
         onChange={props.newUserName}
-        className="form-control"
+        className="Form.Control placeholder='name' userName"
       />'s List To Do
       <p>({props.taskItems.filter((t) => !t.done).length} task to do)</p>
     </h4>
