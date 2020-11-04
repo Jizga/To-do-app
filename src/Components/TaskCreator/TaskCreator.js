@@ -11,6 +11,15 @@ export const TaskCreator = (props) => {
     setNewTaskName("");
   };
 
+  /* ---- Añadir la nueva tarea pulsando "Enter" */
+
+  const pressEnter = (e) => {
+    if (e.key === "Enter") {
+      props.callback(newTaskName);
+      setNewTaskName("");
+    }
+  };
+
   return (
     <div className="my-1">
       <input
@@ -18,6 +27,9 @@ export const TaskCreator = (props) => {
         className={styles.newTask}
         value={newTaskName}
         onChange={updateNewTaskValue}
+        onKeyPress={
+          pressEnter
+        } /* ---- Añadir la nueva tarea pulsando "Enter" */
       />
       {/* botón para agregar una nueva tarea */}
       <button className={styles.bottonNewTask} onClick={createNewTask}>
