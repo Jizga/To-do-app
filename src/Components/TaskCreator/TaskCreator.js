@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import styles from "./TaskCreator.module.scss";
 
 export const TaskCreator = (props) => {
-  const [newTaskName, setNewTaskName] = useState(" ");
+  const [newTaskName, setNewTaskName] = useState("");
 
   const updateNewTaskValue = (e) => setNewTaskName(e.target.value);
 
   const createNewTask = () => {
     props.callback(newTaskName);
-    setNewTaskName(" ");
+    setNewTaskName("");
   };
 
   return (

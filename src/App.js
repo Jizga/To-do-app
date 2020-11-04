@@ -3,7 +3,7 @@ import { TaskRow } from "./Components/TaskRow/TaskRow";
 import { TaskBanner } from "./Components/TaskBanner/TaskBanner";
 import { TaskCreator } from "./Components/TaskCreator/TaskCreator";
 import { VisibilityControl } from "./Components/VisibilityControl/VisibilityControl";
-import styles from  "./App.module.scss";
+import styles from "./App.module.scss";
 
 function App() {
   /* 1º se define al dueño de las tareas */
@@ -46,8 +46,10 @@ function App() {
   /* 3º.-- Se define la función que añadirá las tareas nuevas */
 
   const createNewTask = (taskName) => {
-    if (!taskItems.find((t) => t.name === taskName)) {
-      setTaskItems([...taskItems, { name: taskName, done: false }]);
+    if (taskName !== "") {
+      if (!taskItems.find((t) => t.name === taskName)) {
+        setTaskItems([...taskItems, { name: taskName, done: false }]);
+      }
     }
   };
 
@@ -131,8 +133,8 @@ componente "TaskRow" mediante props */
           <table className="table table-striped table-bordered">
             <thead>
               <tr>
-              <th className={styles.description}>Description</th>
-              <th className={styles.done}>Done</th>
+                <th className={styles.description}>Description</th>
+                <th className={styles.done}>Done</th>
               </tr>
             </thead>
             <tbody className={styles.task}>{taskTableRows(true)}</tbody>
