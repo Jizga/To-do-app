@@ -45,41 +45,45 @@
   }
 }
 
-@media screen and (max-width: 600px) {
+@media (max-width:  480px) {
   .box {
     padding: 0.2rem;
-    background-color: red;
-    width: 70vw;
-    height: 5rem;
-  }
-  .userName {
-    background-color: rgb(196, 188, 233);
-    border: 0;
-    cursor: pointer;
-    height: 3rem;
-   
-    color: whitesmoke;
-    font-family: "Fredericka the Great", cursive;
-    &:hover {
-      color: red;
-    }
-    &:focus {
-      outline: none;
-    }
-  }
-  .list {
-    background-color: rgb(185, 24, 132);
-    color: whitesmoke;
-   
-    font-family: "Fredericka the Great", cursive;
-   
-    margin-left: 0;
-  }
+    background-color: rgb(60, 57, 73);
+    width: 76.7vw;
+    height: 6rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
 
-  .nTask {
-    background-color: rgb(8, 248, 148);
-    color: rgba(194, 192, 192, 0.397);
-    font-size: medium;
-   
+    .userName {
+      background-color: rgb(60, 57, 73);
+      height: 3rem;
+      justify-self: end;
+      margin: 1rem 0 0 0.2rem ;
+      grid-column: 1/2;
+      grid-row: 1;
+      text-align: end;
+      font-size: 20px;
+     
+    }
+    .list {
+      background-color: rgb(60, 57, 73);
+      height: 3rem;
+      margin-top: 1rem;
+      padding-top: 0.5rem;
+      grid-column: 2/3;
+      grid-row: 1;
+      font-size: 20px;
+     
+    }
+    .nTask {
+      background-color: rgb(60, 57, 73);
+      grid-column: 1/-1;
+      grid-row: 2;
+      font-size: 15.5px;
+      justify-self: center;
+      color: rgba(194, 192, 192, 0.397);
+    }
   }
 }
+
