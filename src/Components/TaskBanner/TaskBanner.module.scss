@@ -87,3 +87,46 @@
   }
 }
 
+
+@media (max-width:  360px) {
+  .box {
+    padding: 0.2rem;
+    background-color: rgb(60, 57, 73);
+    width: 68.8vw;
+    height: 6rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+
+    .userName {
+      background-color: rgb(60, 57, 73);
+      height: 3rem;
+      justify-self: end;
+      margin: 1rem 0 0 0.2rem ;
+      grid-column: 1/2;
+      grid-row: 1;
+      text-align: end;
+      font-size: 15px;
+     
+    }
+    .list {
+      background-color: rgb(60, 57, 73);
+      height: 3rem;
+      margin: 1rem 0.5rem 0 0;
+      padding-top: 0.5rem;
+      grid-column: 2/3;
+      grid-row: 1;
+      font-size: 15px;
+      justify-self: center;
+     
+    }
+    .nTask {
+      background-color: rgb(60, 57, 73);
+      grid-column: 1/-1;
+      grid-row: 2;
+      font-size: 12px;
+      justify-self: center;
+      color: rgba(194, 192, 192, 0.397);
+    }
+  }
+}
