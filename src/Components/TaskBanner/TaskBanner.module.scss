@@ -1,15 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap");
 
-
-h4 {
+.box {
   padding: 1.5rem;
   background-color: rgb(60, 57, 73);
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 
   .userName {
-   background-color: rgb(60, 57, 73);
-   border: 0;
+    background-color: rgb(60, 57, 73);
+    border: 0;
     cursor: pointer;
     grid-column: 1/2;
     width: auto;
@@ -17,7 +16,7 @@ h4 {
     text-align: end;
     padding-bottom: 1rem;
     color: whitesmoke;
-    font-family: 'Fredericka the Great', cursive;
+    font-family: "Fredericka the Great", cursive;
     margin-left: 12.5rem;
     &:hover {
       color: red;
@@ -28,13 +27,12 @@ h4 {
   }
 
   .list {
-   background-color: rgb(60, 57, 73);
-   color: whitesmoke;
-   text-align: start;
-   font-family: 'Fredericka the Great', cursive;
-   grid-column: 2/4;
-   margin-left: 0;
-   
+    background-color: rgb(60, 57, 73);
+    color: whitesmoke;
+    text-align: start;
+    font-family: "Fredericka the Great", cursive;
+    grid-column: 2/4;
+    margin-left: 0;
   }
 
   .nTask {
@@ -44,5 +42,44 @@ h4 {
     color: rgba(194, 192, 192, 0.397);
     font-size: medium;
     margin-right: 1rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .box {
+    padding: 0.2rem;
+    background-color: red;
+    width: 70vw;
+    height: 5rem;
+  }
+  .userName {
+    background-color: rgb(196, 188, 233);
+    border: 0;
+    cursor: pointer;
+    height: 3rem;
+   
+    color: whitesmoke;
+    font-family: "Fredericka the Great", cursive;
+    &:hover {
+      color: red;
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+  .list {
+    background-color: rgb(185, 24, 132);
+    color: whitesmoke;
+   
+    font-family: "Fredericka the Great", cursive;
+   
+    margin-left: 0;
+  }
+
+  .nTask {
+    background-color: rgb(8, 248, 148);
+    color: rgba(194, 192, 192, 0.397);
+    font-size: medium;
+   
   }
 }

@@ -3,11 +3,11 @@ import { TaskRow } from "./Components/TaskRow/TaskRow";
 import { TaskBanner } from "./Components/TaskBanner/TaskBanner";
 import { TaskCreator } from "./Components/TaskCreator/TaskCreator";
 import { VisibilityControl } from "./Components/VisibilityControl/VisibilityControl";
-import "./App.scss";
+import styles from  "./App.module.scss";
 
 function App() {
   /* 1º se define al dueño de las tareas */
-  const [userName, setUserName] = useState("Jizga");
+  const [userName, setUserName] = useState("Viviana Vega");
   const newUserName = (e) => {
     setUserName(e.target.value);
     localStorage.setItem("user", userName);
@@ -17,7 +17,7 @@ function App() {
   const [taskItems, setTaskItems] = useState([
     { name: "Go to the market", done: false },
     { name: "Buy Gabri's present", done: false },
-    { name: "Finish the proyecto 'To Do'", done: true },
+    { name: "Finish the project 'To Do'", done: true },
   ]);
 
   /* 4º.-- Mostrar las tareas completadas  */
@@ -33,7 +33,7 @@ function App() {
       setTaskItems(JSON.parse(data));
       setUserName(user);
     } else {
-      setUserName("Jizga");
+      setUserName("Viviana Vega");
       setShowCompleted(true);
     }
   }, []);
@@ -99,7 +99,7 @@ componente "TaskRow" mediante props */
   };
 
   return (
-    <div className="App">
+    <div className={styles.App}>
       <div>
         <TaskBanner
           userName={userName}
@@ -109,12 +109,12 @@ componente "TaskRow" mediante props */
         <table className="table table-striped table-bordered">
           <thead>
             <tr>
-              <th className="description">Description</th>
-              <th className="done">Done</th>
+              <th className={styles.description}>Description</th>
+              <th className={styles.done}>Done</th>
             </tr>
           </thead>
           {/* función que dará el contenido de la tabla */}
-          <tbody className="task">{taskTableRows(false)}</tbody>
+          <tbody className={styles.task}>{taskTableRows(false)}</tbody>
         </table>
 
         <TaskCreator callback={createNewTask} />
@@ -131,11 +131,11 @@ componente "TaskRow" mediante props */
           <table className="table table-striped table-bordered">
             <thead>
               <tr>
-              <th className="description">Description</th>
-              <th className="done">Done</th>
+              <th className={styles.description}>Description</th>
+              <th className={styles.done}>Done</th>
               </tr>
             </thead>
-            <tbody className="task">{taskTableRows(true)}</tbody>
+            <tbody className={styles.task}>{taskTableRows(true)}</tbody>
           </table>
         )}
       </div>

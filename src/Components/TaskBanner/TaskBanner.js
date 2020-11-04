@@ -3,7 +3,7 @@ import styles from "./TaskBanner.module.scss";
 
 export const TaskBanner = (props) => {
   return (
-    <h4>
+    <h4 className={styles.box}>
       <input
         type="text"
         value={props.userName}

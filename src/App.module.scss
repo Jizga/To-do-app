@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
 
 .App {
   text-align: center;
@@ -15,5 +15,12 @@
 }
 
 .task {
-  font-family: 'Indie Flower', cursive;
+  font-family: "Indie Flower", cursive;
+}
+
+@media screen and (max-width: 600px) {
+  .App {
+    text-align: center;
+    box-shadow: 5px 2px 15px #d3c9c9;
+  }
 }
